@@ -27,11 +27,13 @@ addButtonEl.addEventListener("click", function() {
 
 
 onValue(shoppingListInDB, function (snapshot ){
+    
    let itemArray = Object.values(snapshot.val())
+
    for (let i = 0; i < itemsArray.length; i++) {
-
+    
     appendItemToShoppingListEl(itemArray[i])
-
+     
    }
 })
 
