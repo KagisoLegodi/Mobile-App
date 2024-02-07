@@ -31,7 +31,7 @@ onValue(shoppingListInDB, function (snapshot ){
    for (let i = 0; i < itemsArray.length; i++) {
 
     appendItemToShoppingListEl(itemArray[i])
-     
+
    }
 })
 
