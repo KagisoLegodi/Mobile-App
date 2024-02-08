@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
 
 const appSettings = {
     databaseURL: "https://realtime-database-b6132-default-rtdb.europe-west1.firebasedatabase.app/"
-};
+}
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
@@ -20,17 +20,16 @@ addButtonEl.addEventListener("click", function() {
 });
 
 onValue(shoppingListInDB, function(snapshot) {
-    let itemArray = Object.entries(snapshot.val());
-
-    console.log(snapshot.val());
+    let itemsArray = Object.entries(snapshot.val());
 
     clearShoppingListEl();
 
-    for (let i = 0; i < itemArray.length; i++) {
-        
-        let currentItem = itemArray[i]
-        
-        appendItemToShoppingListEl(itemArray[i]);
+    for (let i = 0; i < itemsArray.length; i++) {
+        let currentItem = itemsArray[i];
+        let currentItemID = currentItem[0];
+        let currentItemValue = currentItem[1];
+
+        appendItemToShoppingListEl(currentItemID, currentItemValue);
     }
 });
 
@@ -42,20 +41,25 @@ function clearInputFieldEl() {
     inputFieldEl.value = "";
 }
 
-function appendItemToShoppingListEl(itemValue) {
+function appendItemToShoppingListEl(itemID, itemValue) {
     const listItem = document.createElement("li");
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
 
-    checkbox.id = `checkbox-${itemValue}`;
+    checkbox.id = `checkbox-${itemID}`;
 
     const label = document.createElement("label");
     label.textContent = itemValue;
-    label.setAttribute("for", `checkbox-${itemValue}`);
+    label.setAttribute("for", `checkbox-${itemID}`);
 
     listItem.appendChild(checkbox);
     listItem.appendChild(label);
+
+    listItem.addEventListener("click", function() {
+        let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`);
+        remove(exactLocationOfItemInDB);
+    });
 
     shoppingListEl.appendChild(listItem);
 }
