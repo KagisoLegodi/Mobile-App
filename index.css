@@ -39,3 +39,15 @@ button {
     text-align: center;
     font-family: 'Rubik', sans-serif;
 }
+
+
+li input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+li input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #808080; 
+}
