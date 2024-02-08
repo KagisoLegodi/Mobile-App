@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #EEF0F4;
     color: #432000;
     -webkit-user-select: none;
@@ -34,7 +34,7 @@ input {
 
 button {
     color: #FDFDFD;
-    background-color: #AC485A;
+    background-color: #0faf1f;
     border: 0;
     padding: 15px;
     border-radius: 8px;
@@ -44,7 +44,7 @@ button {
 }
 
 button:hover {
-    background-color: #432000;
+    background-color: gold;
     cursor:pointer;
 }
 
@@ -68,7 +68,7 @@ ul li {
 }
 
 ul li:hover {
-    background-color: #FFECC7;
+    background-color: #ff0000;
     cursor: pointer;
 }
 
@@ -87,8 +87,15 @@ li input[type="checkbox"]:checked + label {
     animation: pulse 1s ease; /* Apply pulse animation on click */
 }
 
+/* Add a new class for the pulse animation */
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); } /* Adjusted scale for the pulse effect */
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+
+/* Apply the pulse animation to the button when the 'pulse' class is present */
+.pulse {
+    animation: pulse 1s ease;
+}
+

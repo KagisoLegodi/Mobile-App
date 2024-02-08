@@ -17,6 +17,13 @@ addButtonEl.addEventListener("click", function() {
     let inputValue = inputFieldEl.value;
     push(shoppingListInDB, inputValue);
     clearInputFieldEl();
+    // Add the pulse class when the button is clicked
+    addButtonEl.classList.add("pulse");
+    
+    // Remove the pulse class after the animation completes
+    setTimeout(() => {
+        addButtonEl.classList.remove("pulse");
+    }, 1000);
 });
 
 onValue(shoppingListInDB, function(snapshot) {
@@ -33,7 +40,7 @@ onValue(shoppingListInDB, function(snapshot) {
             appendItemToShoppingListEl(currentItemID, currentItemValue);
         }
     } else {
-        shoppingListEl.innerHTML = "No items here... yet";
+        shoppingListEl.innerHTML = "No items";
     }
 });
 
