@@ -20,10 +20,16 @@ addButtonEl.addEventListener("click", function() {
 });
 
 onValue(shoppingListInDB, function(snapshot) {
-    let itemArray = snapshot.val() ? Object.values(snapshot.val()) : [];
+    let itemArray = Object.entries(snapshot.val());
+
+    console.log(snapshot.val());
+
     clearShoppingListEl();
 
     for (let i = 0; i < itemArray.length; i++) {
+        
+        let currentItem = itemArray[i]
+        
         appendItemToShoppingListEl(itemArray[i]);
     }
 });
@@ -48,10 +54,8 @@ function appendItemToShoppingListEl(itemValue) {
     label.textContent = itemValue;
     label.setAttribute("for", `checkbox-${itemValue}`);
 
-
     listItem.appendChild(checkbox);
     listItem.appendChild(label);
 
-    
     shoppingListEl.appendChild(listItem);
 }
