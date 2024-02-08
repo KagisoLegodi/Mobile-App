@@ -20,16 +20,20 @@ addButtonEl.addEventListener("click", function() {
 });
 
 onValue(shoppingListInDB, function(snapshot) {
-    let itemsArray = Object.entries(snapshot.val());
+    if (snapshot.exists()) {
+        let itemsArray = Object.entries(snapshot.val());
 
-    clearShoppingListEl();
+        clearShoppingListEl();
 
-    for (let i = 0; i < itemsArray.length; i++) {
-        let currentItem = itemsArray[i];
-        let currentItemID = currentItem[0];
-        let currentItemValue = currentItem[1];
+        for (let i = 0; i < itemsArray.length; i++) {
+            let currentItem = itemsArray[i];
+            let currentItemID = currentItem[0];
+            let currentItemValue = currentItem[1];
 
-        appendItemToShoppingListEl(currentItemID, currentItemValue);
+            appendItemToShoppingListEl(currentItemID, currentItemValue);
+        }
+    } else {
+        shoppingListEl.innerHTML = "No items here... yet";
     }
 });
 
