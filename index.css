@@ -40,14 +40,42 @@ button {
     font-family: 'Rubik', sans-serif;
 }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+ul li {
+    font-size: 20px;
+    background-color: #FFFDF8;
+    padding: 15px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out; /* Added transition for pulse effect */
+}
 
 li input[type="checkbox"] {
     display: inline-block;
     margin-right: 5px;
 }
 
-
 li input[type="checkbox"]:checked + label {
     text-decoration: line-through;
     color: #808080; 
+}
+
+li input[type="checkbox"]:checked + label {
+    border-radius: 50%;
+    animation: pulse 1s ease; /* Apply pulse animation on click */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Adjusted scale for the pulse effect */
+    100% { transform: scale(1); }
 }
