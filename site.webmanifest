@@ -1,6 +1,6 @@
 {
     "name": "Re-Stock",
-    "short_name": "RS",
+    "short_name": "Re-Stock",
     "icons":
         [
             {"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},
