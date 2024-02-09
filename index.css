@@ -44,11 +44,11 @@ button {
     font-size: 20px;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    cursor: pointer;
 }
 
 button:hover {
     background-color: gold;
+    cursor:pointer;
 }
 
 ul {
@@ -67,19 +67,22 @@ ul li {
     flex-grow: 1;
     text-align: center;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out; /* Added transition for pulse effect */
 }
 
 ul li:active {
     background-color: #ff0000;
+    cursor: pointer;
 }
 
+/* Add a new class for the pulse animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
 
+/* Apply the pulse animation to the button when the 'pulse' class is present */
 .pulse {
     animation: pulse 1s ease;
 }
