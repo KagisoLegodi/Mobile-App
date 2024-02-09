@@ -70,24 +70,9 @@ ul li {
     transition: transform 0.4s ease-in-out; /* Added transition for pulse effect */
 }
 
-ul li:hover {
+ul li:active {
     background-color: #ff0000;
     cursor: pointer;
-}
-
-li input[type="checkbox"] {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-li input[type="checkbox"]:checked + label {
-    text-decoration: line-through;
-    color: #808080; 
-}
-
-li input[type="checkbox"]:checked + label {
-    border-radius: 50%;
-    animation: pulse 1s ease; /* Apply pulse animation on click */
 }
 
 /* Add a new class for the pulse animation */
@@ -103,7 +88,7 @@ li input[type="checkbox"]:checked + label {
 }
 
 footer {
-    text-align: center;
+    text-align: end;
     padding: 10px;
     background-color: #432000;
     color: #FDFDFD;

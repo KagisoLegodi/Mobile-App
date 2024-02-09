@@ -55,11 +55,6 @@ function clearInputFieldEl() {
 function appendItemToShoppingListEl(itemID, itemValue) {
     const listItem = document.createElement("li");
 
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-
-    checkbox.id = `checkbox-${itemID}`;
-
     const label = document.createElement("label");
     label.textContent = itemValue;
     label.setAttribute("for", `checkbox-${itemID}`);
