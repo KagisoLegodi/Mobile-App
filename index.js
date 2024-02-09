@@ -61,7 +61,7 @@ onValue(shoppingListInDB, function(snapshot) {
         }
     } else {
         // Display a message if there are no items in the database
-        shoppingListEl.innerHTML = "No items";
+        shoppingListEl.innerHTML = "Fill pantry";
     }
 });
 
