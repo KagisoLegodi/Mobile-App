@@ -98,9 +98,11 @@ ul li:active {
 
 /* Styling for the footer */
 footer {
-    text-align: end;
+    text-align: center;
     padding: 10px;
     background-color: #432000;
     color: #FDFDFD;
     text-decoration: wavy;
+    position: fixed;
+    bottom: 50px;
 }
