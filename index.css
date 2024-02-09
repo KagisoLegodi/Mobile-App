@@ -6,6 +6,9 @@ html, body {
     color: #432000;
     -webkit-user-select: none;
     user-select: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -99,3 +102,9 @@ li input[type="checkbox"]:checked + label {
     animation: pulse 1s ease;
 }
 
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #432000;
+    color: #FDFDFD;
+}
