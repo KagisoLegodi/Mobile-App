@@ -1,3 +1,4 @@
+/* Reset default margin and padding, set font, and basic styling */
 html, body {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ html, body {
     min-height: 100vh;
 }
 
+/* Styling for the main container */
 .container {
     display: flex;
     flex-direction: column;
@@ -18,11 +20,13 @@ html, body {
     margin: 30px auto;
 }
 
+/* Styling for images */
 img {
     width: 150px;
     margin: 0 auto;
 }
 
+/* Styling for input fields */
 input {
     color: #432000;
     background-color: #DCE1EB;
@@ -35,6 +39,7 @@ input {
     margin: 10px 0;
 }
 
+/* Styling for buttons */
 button {
     color: #FDFDFD;
     background-color: #0faf1f;
@@ -47,10 +52,12 @@ button {
     cursor: pointer;
 }
 
+/* Hover effect for buttons */
 button:hover {
     background-color: gold;
 }
 
+/* Styling for unordered lists */
 ul {
     list-style-type: none;
     padding: 0;
@@ -59,6 +66,7 @@ ul {
     gap: 10px;
 }
 
+/* Styling for list items in the unordered list */
 ul li {
     font-size: 20px;
     background-color: #FFFDF8;
@@ -70,11 +78,12 @@ ul li {
     transition: transform 0.4s ease-in-out;
 }
 
+/* Styling for active state of list items */
 ul li:active {
     background-color: #ff0000;
 }
 
-/* Add a new class for the pulse animation */
+/* Keyframes for the pulse animation */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -86,6 +95,7 @@ ul li:active {
     animation: pulse 1s ease;
 }
 
+/* Styling for the footer */
 footer {
     text-align: end;
     padding: 10px;
