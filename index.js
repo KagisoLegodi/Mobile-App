@@ -19,7 +19,7 @@ addButtonEl.addEventListener("click", function() {
     clearInputFieldEl();
     // Add the pulse class when the button is clicked
     addButtonEl.classList.add("pulse");
-    
+
     // Remove the pulse class after the animation completes
     setTimeout(() => {
         addButtonEl.classList.remove("pulse");
@@ -59,7 +59,6 @@ function appendItemToShoppingListEl(itemID, itemValue) {
     label.textContent = itemValue;
     label.setAttribute("for", `checkbox-${itemID}`);
 
-    listItem.appendChild(checkbox);
     listItem.appendChild(label);
 
     listItem.addEventListener("click", function() {
