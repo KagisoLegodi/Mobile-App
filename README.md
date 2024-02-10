@@ -10,7 +10,7 @@ This project is a simple web application that allows users to add items to a sho
 
 - **HTML Changes:**
   - Added a form with an input field and a button for adding items to the shopping list.
-  - Incorporated a footer with the designer's name.
+  - Incorporated a footer with a clock.
 
 - **CSS Changes:**
   - Styled the form elements, button, and shopping list items for a visually appealing layout.
